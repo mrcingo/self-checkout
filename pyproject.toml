@@ -1,0 +1,35 @@
+[project]
+name = "self-checkout"
+version = "0.1.0"
+description = "RFID + MQTT + ESP32 proximity-triggered self-checkout system for autonomous retail."
+readme = "README.md"
+requires-python = "==3.12.7"
+dependencies = [
+    "amqtt>=0.10.0",
+    "paho-mqtt>=2.0.2",
+    "pyserial>=3.5",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[dependency-groups]
+dev = [
+    "black>=26.5.1",
+]
